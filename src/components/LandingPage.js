@@ -1,20 +1,27 @@
 import React from "react";
 import {
-  Card,
-  Grid,
   Image,
   Button,
   Header,
-  Icon,
   Container,
   Segment,
-  Divider,
-  Form,
 } from "semantic-ui-react";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
 function LandingPage(props) {
+
+  // const [loginLink, setLoginLink] = useState("");
+
+
+  const getSpotifyUserLogin = () => {
+    fetch("http://localhost:8080/api/login")
+    .then((response) => response.text())
+    .then(response => {
+      window.location.replace(response);
+    })
+  }
+
   return (
     <div style={{ marginBottom: "250px" }}>
       <div style={{ textAlign: "center", alignItems: "center" }}>
@@ -53,9 +60,9 @@ function LandingPage(props) {
 
           <Segment>
             <h3>Please login with Spotify to get started!</h3>
-            <Link to="/login">
-              <Button>Sign In</Button>
-            </Link>
+            {/* <Link to="/login"> */}
+              <Button onClick = {getSpotifyUserLogin}>Sign In</Button>
+            {/* </Link> */}
           </Segment>
         </Container>
       </div>
@@ -69,4 +76,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default withRouter(connect(mapStateToProps)(LandingPage));
+// export default withRouter(connect(mapStateToProps)(LandingPage));
+
+export default withRouter(LandingPage);

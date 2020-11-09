@@ -7,14 +7,13 @@ import { Provider } from "react-redux";
 
 import * as serviceWorker from "./serviceWorker";
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 ReactDOM.render(
-  <Provider store={store}>
     <Router>
       <App />
     </Router>
-  </Provider>,
+  ,
   document.getElementById("root")
 );
 
