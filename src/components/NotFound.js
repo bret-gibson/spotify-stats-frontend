@@ -1,11 +1,10 @@
 import React, { Fragment } from "react";
-import { Header } from "semantic-ui-react";
 
 const NotFound = () => (
   <Fragment>
-    <Header size="huge" inverted color="purple">
+    <h1>
       Oops! Looks like this page doesn't exist!
-    </Header>
+    </h1>
   </Fragment>
 );
 
