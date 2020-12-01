@@ -1,9 +1,6 @@
 import React from "react";
-import {
-  Button,
-  Header,
-  Container,
-} from "semantic-ui-react";
+import { Button } from '@material-ui/core';
+
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -19,12 +16,10 @@ function LandingPage() {
 
   return (
       <div style={{ marginTop: "250px", display: "flex", justifyContent: "center", alignItems: "center"}}>
-        <Container textAlign = "center">
-          <Header>
+          <h1>
             Please login with Spotify to get started!
-          </Header>
-              <Button primary onClick = {getSpotifyUserLogin}>Sign In</Button>
-        </Container>
+          </h1>
+              <Button variant = "contained" color = "primary" onClick = {getSpotifyUserLogin}>Sign In</Button>
       </div>
   );
 }
