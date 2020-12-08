@@ -15,12 +15,23 @@ function LandingPage() {
   }
 
   return (
-      <div style={{ marginTop: "250px", display: "flex", justifyContent: "center", alignItems: "center"}}>
-          <h1>
-            Please login with Spotify to get started!
-          </h1>
-              <Button variant = "contained" color = "primary" onClick = {getSpotifyUserLogin}>Sign In</Button>
+    <div>
+      <div style={{display: "flex", justifyContent: "center"}}>
+        <h1>Welcome to Spotty!</h1>
       </div>
+
+      <div style={{display: "flex", justifyContent: "center"}}>
+        <h1>
+          Please login with Spotify to get started!
+        </h1>
+      </div>
+      <div style={{display: "flex", justifyContent: "center", margin: "1rem"}}>
+        <Button variant = "contained" color = "primary" onClick = {getSpotifyUserLogin}>Sign In</Button>
+      </div>
+
+
+    </div>
+
   );
 }
 

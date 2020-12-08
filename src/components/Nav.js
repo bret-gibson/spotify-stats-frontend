@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Nav() {
+export default function NavTabs() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -75,22 +75,18 @@ function Nav() {
           value={value}
           onChange={handleChange}
           aria-label="nav tabs example"
+          centered
         >
-          <LinkTab label="Page One" href="/drafts" {...a11yProps(0)} />
-          <LinkTab label="Page Two" href="/trash" {...a11yProps(1)} />
-          <LinkTab label="Page Three" href="/spam" {...a11yProps(2)} />
+          <LinkTab label="My Listening Habits" href="/listening-stats" {...a11yProps(0)} />
+          <LinkTab label="Generate Playlist" href="/playlist" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Page One
+        My Listening Habits
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Page Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Page Three
+        Generate Playlist
       </TabPanel>
     </div>
   );
-
-export default withRouter(Nav);
+}
